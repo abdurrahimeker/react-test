@@ -11,9 +11,12 @@
   // const sayı = (cb) => {
   //   cb();
   // };
+
   // sayı(() => {
   //   console.log("eker")
   // })
+
+  
 
 function App() {
   return (
