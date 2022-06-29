@@ -14,9 +14,10 @@
 
   // sayı(() => {
   //   console.log("eker")
-  // })
+  // }),
+  
 
-  // const users = [
+  // const users = [ 
   //   {
   //     id: 1,
   //     name:'ahmet',
