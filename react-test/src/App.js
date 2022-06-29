@@ -16,30 +16,30 @@
   //   console.log("eker")
   // })
 
-  const users = [
-    {
-      id: 1,
-      name:'ahmet',
-      surname:'eker',
-    },
-    {
-      id: 2,
-      name:'mehmet',
-      surname:'eker',
-    },
-    {
-      id: 3,
-      name:'mahmut',
-      surname:'eker',
-    }
-  ]
+  // const users = [
+  //   {
+  //     id: 1,
+  //     name:'ahmet',
+  //     surname:'eker',
+  //   },
+  //   {
+  //     id: 2,
+  //     name:'mehmet',
+  //     surname:'eker',
+  //   },
+  //   {
+  //     id: 3,
+  //     name:'mahmut',
+  //     surname:'eker',
+  //   }
+  // ]
 
 
   // push işlemi arraye yeni eleman
   // users.push('ekr')
   // users.push('ekrdfsfds')
 
-  //map işlemi array içinde gezinme
+  // map işlemi array içinde gezinme
   // users.map((x) => {
   //   console.log(x.surname)
   // })
@@ -48,7 +48,7 @@
   // const result = users.find((x) => x.id == 1)
   // console.log(result)
 
-  //filter işlemi verdiğimiz koşula uygun olani filtreler
+  // filter işlemi verdiğimiz koşula uygun olani filtreler
   // const filtered = users.filter((x) => x.name == "mahmut");
   // console.log(filtered)
 
