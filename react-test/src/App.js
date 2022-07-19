@@ -66,6 +66,7 @@
   // const includes = meyveler.includes("elma")
   // console.log(includes);
 
+  import propTypes from "prop-types";
   function App() {
   return (
     <div className="App">
