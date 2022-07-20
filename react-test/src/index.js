@@ -29,40 +29,44 @@
 // root.render(<App />);
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Formik, Field, Form } from 'formik';
-
-const Basic = () => (
-  <div>
-    <h1>Giriş yap</h1>
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-      }}
-      onSubmit={async (values) => {
-        console.log(JSON.stringify(values, null, 2));
-      }}
-    >
-      <Form>
-        <label htmlFor="firstName">Adınız :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Field id="firstName" name="firstName" placeholder="Abdurrahim" />
-
-        <br></br>
-        <br></br>
-
-
-        <label htmlFor="lastName">Soyadınız :</label>&nbsp;&nbsp;
-        <Field id="lastName" name="lastName" placeholder="Eker" />
-
-        <br></br>
-        <br></br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="submit">Submit</button>
-      </Form>
-    </Formik>
-  </div>
-);
-
-ReactDOM.render(<Basic />, document.getElementById('root'));
+  import ReactDOM from 'react-dom';
+  import { Formik } from 'formik';
+  
+  function App() {
+    return (
+      <div className='App'>
+        <h1>Giriş yap</h1>
+        <Formik
+          initialValues={{
+            firstName: '',
+            lastName: '',
+          }}
+          onSubmit={values => {
+            console.log(values);
+          }}
+        >
+          {({handleSubmit , handleChange}) =>(
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="firstName">Adınız :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="firstName" name="firstName" onChange={handleChange} placeholder="Abdurrahim" />
+  
+            <br></br>
+            <br></br>
+  
+  
+            <label htmlFor="lastName">Soyadınız :</label>&nbsp;&nbsp;
+            <input id="lastName" name="lastName" onChange={handleChange} placeholder="Eker" />
+  
+            <br></br>
+            <br></br>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit">Submit</button>
+          </form>
+          )}
+        </Formik>
+      </div>
+  );
+  
+}
+ReactDOM.render(<App />, document.getElementById('root'));

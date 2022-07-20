@@ -70,39 +70,41 @@
   import ReactDOM from 'react-dom';
   import { Formik, Field, Form } from 'formik';
   
-  const Basic = () => (
-    <div>
-      <h1>Sign Up</h1>
-      <Formik
-        initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
-        }}
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <label htmlFor="firstName">First Name</label>
-          <Field id="firstName" name="firstName" placeholder="Jane" />
+  function App() {
+    return (
+      <div className='App'>
+        <h1>Giriş yap</h1>
+        <Formik
+          initialValues={{
+            firstName: '',
+            lastName: '',
+          }}
+          onSubmit={values => {
+            console.log(JSON.stringify(values));
+          }}
+        >
+          {({handleSubmit , handleChange}) =>(
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="firstName">Adınız :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="firstName" name="firstName" onChange={handleChange} placeholder="Abdurrahim" />
   
-          <label htmlFor="lastName">Last Name</label>
-          <Field id="lastName" name="lastName" placeholder="Doe" />
+            <br></br>
+            <br></br>
   
-          <label htmlFor="email">Email</label>
-          <Field
-            id="email"
-            name="email"
-            placeholder="jane@acme.com"
-            type="email"
-          />
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
-    </div>
+  
+            <label htmlFor="lastName">Soyadınız :</label>&nbsp;&nbsp;
+            <input id="lastName" name="lastName" onChange={handleChange} placeholder="Eker" />
+  
+            <br></br>
+            <br></br>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit">Submit</button>
+          </form>
+          )}
+        </Formik>
+      </div>
   );
   
-  ReactDOM.render(<Basic />, document.getElementById('root'));
-  
+}
+ReactDOM.render(<App />, document.getElementById('root'));
