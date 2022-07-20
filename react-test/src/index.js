@@ -40,12 +40,13 @@ import React from 'react';
           initialValues={{
             firstName: '',
             lastName: '',
+            gender: 'erkek'
           }}
           onSubmit={values => {
             console.log(values);
           }}
         >
-          {({handleSubmit , handleChange}) =>(
+          {({handleSubmit , handleChange ,values}) =>(
           <form onSubmit={handleSubmit}>
             <label htmlFor="firstName">Adınız :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input id="firstName" name="firstName" onChange={handleChange} placeholder="Abdurrahim" />
@@ -59,7 +60,12 @@ import React from 'react';
   
             <br></br>
             <br></br>
-  
+            
+            <span>Erkek</span>
+            <input type="radio" name='gender' value="erkek" onChange={handleChange} checked={values.gender === 'erkek'}/>
+            <span>Kadın</span>
+            <input type="radio" name='gender' value="kadın" onChange={handleChange} />
+
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="submit">Submit</button>
           </form>
